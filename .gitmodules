@@ -1,0 +1,21 @@
+[submodule "tunkjs/tunk"]
+	path = tunkjs/tunk
+	url = https://github.com/tunkjs/tunk.git
+[submodule "tunkjs/tunk-vue"]
+	path = tunkjs/tunk-vue
+	url = https://github.com/tunkjs/tunk-vue.git
+[submodule "tunkjs/tunk-cookie"]
+	path = tunkjs/tunk-cookie
+	url = https://github.com/tunkjs/tunk-cookie.git
+[submodule "tunkjs/tunk-request"]
+	path = tunkjs/tunk-request
+	url = https://github.com/tunkjs/tunk-request.git
+[submodule "tunkjs/tunk-promise-middleware"]
+	path = tunkjs/tunk-promise-middleware
+	url = https://github.com/tunkjs/tunk-promise-middleware.git
+[submodule "tunkjs/tunk-action-middleware"]
+	path = tunkjs/tunk-action-middleware
+	url = https://github.com/tunkjs/tunk-action-middleware.git
+[submodule "tunkjs/tunk-react"]
+	path = tunkjs/tunk-react
+	url = https://github.com/tunkjs/tunk-react.git
