@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "description": "tunk-react counter example",
   "dependencies": {
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "tunk":"latest",
-    "tunk-react":"latest",
-    "tunk-action-middleware":"latest"
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -22,10 +22,10 @@
     "babel-runtime": "^6.3.13",
     "express": "^4.13.3",
     "node-libs-browser": "^0.5.2",
-    "react-addons-test-utils": "^0.14.0",
+    "react-addons-test-utils": "^0.14.8",
     "react-transform-hmr": "^1.0.0",
-    "webpack": "^1.9.11",
+    "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-hot-middleware": "^2.18.0"
   }
 }

@@ -1,28 +1,19 @@
 import {create, action} from 'tunk';
-
+import list from "./_list";
 
 @create({isolate:'deep'})
-export default class counter {
+export default class counter extends list {
   //不允许异步，应该保持简单
   constructor(){
-    this.state = {
-      count:0
-    };
+    super();
   }
-
-  @action
-  increment(){
-    console.log(this);
-    return {count:this.addOne()};
-  }
-
   @action
   decrement(){
     return {count:this.state.count-1};
   }
 
   @action
-  incrementIfOdd(){
+  incrementIfOdd() {
     if ((this.state.count + 1) % 2 === 0) {
       this.increment();
     }
@@ -33,10 +24,6 @@ export default class counter {
     setTimeout(() => {
       this.dispatch('increment');
     }, 1000)
-  }
-
-  addOne(){
-    return this.state.count+1;
   }
 }
 

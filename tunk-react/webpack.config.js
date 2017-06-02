@@ -4,30 +4,32 @@ var webpack = require('webpack')
 module.exports = {
   //devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware/client',
-    './index'
+    './src/index'
   ],
+  resolve: {
+    extensions: ['.jsx', '.js'],
+    alias: {
+      react: path.join(__dirname, '/node_modules/react'),
+      'prop-types':path.join(__dirname, '/node_modules/prop-types'),
+      modules: path.join(__dirname, '/src/modules'),
+      tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
+      'tunk-react': path.join(__dirname, '../tunkjs/tunk-react/tunk-react.js'),
+    }
+  },
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-	chunkFilename: '[id].chunk.js',
+	  chunkFilename: '[id].chunk.js',
     publicPath: '/build/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
       {
 			test: /\.(js|jsx)$/,
 			exclude: /(node_modules)/,
-			loader: 'babel',
-			query: {
-              "presets": ["es2015", "stage-2", "react"],
-              "plugins": ["transform-decorators-legacy"]
-			},
+			loader: 'babel-loader'
 		}
     ]
   }

@@ -1,7 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from '../tunk-react'
-import '../store/counter';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'tunk-react'
 import ReactDOM from 'react-dom';
+import '../modules/counter';
+import '../modules/counterText';
 
 @connect
 class Btn extends Component {
@@ -23,11 +25,8 @@ class Btn extends Component {
 }
 
 
-@connect({
-  count: 'counter.count'
-},{
-  incrementIfOdd:'counter.incrementIfOdd',
-  incrementAsync:'counter.incrementAsync',
+@connect(['counter', 'counterText'],{
+  c:'counter',
 })
 export default class Counter extends Component {
 
@@ -42,9 +41,9 @@ export default class Counter extends Component {
 
   render() {
 
-    const { count} = this.props;
+    const { counter:{count}, counterText:{text}} = this.props;
 
-    const { increment, incrementIfOdd, incrementAsync, decrement} = this;
+    const { c_increment, c_incrementIfOdd, c_incrementAsync, c_decrement} = this;
 
     return (
       <p>
@@ -54,9 +53,12 @@ export default class Counter extends Component {
         {' '}
         <Btn/>
         {' '}
-        <button onClick={incrementIfOdd}> incrementIfOdd </button>
+        <button onClick={c_incrementIfOdd}> incrementIfOdd </button>
         {' '}
-        <button onClick={() => incrementAsync()}>Increment async</button>
+        <button onClick={() => c_incrementAsync()}>Increment async</button>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        {text}
+        <br/><br/><br/><br/><br/><br/><br/>
       </p>
     )
   }
