@@ -4,9 +4,6 @@
 [submodule "tunkjs/tunk-vue"]
 	path = tunkjs/tunk-vue
 	url = https://github.com/tunkjs/tunk-vue.git
-[submodule "tunkjs/tunk-cookie"]
-	path = tunkjs/tunk-cookie
-	url = https://github.com/tunkjs/tunk-cookie.git
 [submodule "tunkjs/tunk-request"]
 	path = tunkjs/tunk-request
 	url = https://github.com/tunkjs/tunk-request.git
