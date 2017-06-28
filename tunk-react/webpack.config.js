@@ -1,10 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   //devtool: 'cheap-module-eval-source-map',
   entry: [
-    './src/index'
+    './src/index.jsx'
   ],
   resolve: {
     extensions: ['.jsx', '.js'],
@@ -14,8 +14,9 @@ module.exports = {
       modules: path.join(__dirname, '/src/modules'),
       tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
       'tunk-react': path.join(__dirname, '../tunkjs/tunk-react/tunk-react.js'),
+
     }
-  },
+  }, 
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',

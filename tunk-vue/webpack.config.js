@@ -25,7 +25,7 @@ module.exports = {
 			style: path.join(__dirname, '/src/style'),
 			components: path.join(__dirname, '/src/components'),
 			pages: path.join(__dirname, '/src/pages'),
-			modules: path.join(__dirname, '/src/modules'),
+			modules: path.join(__dirname, '../modules'),
             tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
             'tunk-vue': path.join(__dirname, '../tunkjs/tunk-vue/tunk-vue.js'),
 		}

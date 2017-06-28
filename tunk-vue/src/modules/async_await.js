@@ -2,7 +2,7 @@ import {create, action} from 'tunk';
 
 
 @create({isolate:'deep'})
-export default class counter {
+export default class async_await {
   //不允许异步，应该保持简单
   constructor(){
     this.state = {
@@ -22,23 +22,22 @@ export default class counter {
   }
 
   @action
-   async incrementIfOdd() {
+  async incrementIfOdd() {
     if ((this.state.count + 1) % 2 === 0) {
-      const count = await this.incrementAsync();
-      return {count};
+      const count_obj = await this.incrementAsync();
+      return count_obj;
     }
   }
 
   @action
   async incrementAsync(){
-    const connt = await new Promise((resolve, reject) => {
+    const count = await new Promise((resolve, reject) => {
       setTimeout(() => {
         this.dispatch('increment');
         resolve(this.state.count);
       }, 1000);
     });
-    return {connt};
-    
+    return {count};
   }
 
   addOne(){

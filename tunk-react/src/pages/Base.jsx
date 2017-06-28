@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'tunk-react'
 import ReactDOM from 'react-dom';
-import '../modules/counter';
-import '../modules/counterText';
+import 'modules/counter';
+import 'modules/counterText';
 
 @connect
 class Btn extends Component {
@@ -19,14 +19,14 @@ class Btn extends Component {
   render() {
     console.log(this);
     return (
-        <button onClick={this.decrement.bind(this)}>-</button>
+        <button style={{ border:'solid 1px #ccc', 'backgroundColor': '#eee' }} onClick={this.decrement.bind(this)}>-</button>
     )
   }
 }
 
 
 @connect(['counter', 'counterText'],{
-  c:'counter',
+  c:'counter'
 })
 export default class Counter extends Component {
 
@@ -45,20 +45,21 @@ export default class Counter extends Component {
 
     const { c_increment, c_incrementIfOdd, c_incrementAsync, c_decrement} = this;
 
+    const style = { border:'solid 1px #ccc', 'backgroundColor': '#eee' };
+
     return (
       <p>
         Clicked: {count}  times
         {' '}
-        <button ref='btn1' onClick={this.increment__.bind(this)}>+</button>
+        <button style={style} ref='btn1' onClick={this.increment__.bind(this)}>+</button>
         {' '}
         <Btn/>
         {' '}
-        <button onClick={c_incrementIfOdd}> incrementIfOdd </button>
+        <button style={style} onClick={c_incrementIfOdd}> incrementIfOdd </button>
         {' '}
-        <button onClick={() => c_incrementAsync()}>Increment async</button>
-        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <button style={style} onClick={() => c_incrementAsync()}>Increment async</button>
+        <br/><br/>
         {text}
-        <br/><br/><br/><br/><br/><br/><br/>
       </p>
     )
   }
