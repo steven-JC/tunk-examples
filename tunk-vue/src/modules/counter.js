@@ -1,19 +1,14 @@
 import {create, action} from 'tunk';
+import _list from './_list';
 
-
-@create('counter', {isolate:'deep'})
-export default class counter {
+@create
+export default class counter extends _list {
   //不允许异步，应该保持简单
   constructor(){
+    super();
     this.state = {
       count:0
     };
-  }
-
-  @action
-  increment(){
-    console.log(this);
-    return {count:this.addOne()};
   }
 
   @action
@@ -41,13 +36,12 @@ export default class counter {
     
   }
 
-  addOne(){
-    return this.state.count + 1;
-  }
 
   getStateOfOtherClass(){
     this.getState('counterText');
   }
 
 }
+
+console.log({counter});
 

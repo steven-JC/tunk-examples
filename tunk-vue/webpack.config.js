@@ -44,7 +44,7 @@ module.exports = {
                 loader: 'vue-loader',
             }, {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader: 'babel-loader!tunk-loader',
                 exclude: /(node_modules)/
             }, {
 				test: /\.json$/,

@@ -2,7 +2,7 @@ import {create, action} from 'tunk';
 
 
 @create('async_await', {isolate:'deep'})
-export default class async_await {
+export default class async_await22 {
   //不允许异步，应该保持简单
   constructor(){
     this.state = {
