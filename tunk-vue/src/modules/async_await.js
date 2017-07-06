@@ -1,7 +1,7 @@
 import {create, action} from 'tunk';
 
 
-@create({isolate:'deep'})
+@create('async_await', {isolate:'deep'})
 export default class async_await {
   //不允许异步，应该保持简单
   constructor(){

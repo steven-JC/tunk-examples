@@ -1,7 +1,7 @@
 import {create, action} from 'tunk';
 
 
-@create({isolate:'deep'})
+@create('counter', {isolate:'deep'})
 export default class counter {
   //不允许异步，应该保持简单
   constructor(){
@@ -44,5 +44,10 @@ export default class counter {
   addOne(){
     return this.state.count + 1;
   }
+
+  getStateOfOtherClass(){
+    this.getState('counterText');
+  }
+
 }
 

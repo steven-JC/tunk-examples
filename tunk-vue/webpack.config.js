@@ -85,9 +85,9 @@ module.exports = {
 
         // 生成环境清空冗余文件
         if (IS_PRD_MODE) {
-            r.push(new webpack.optimize.UglifyJsPlugin({
-                minimize : true,
-            }));
+            // r.push(new webpack.optimize.UglifyJsPlugin({
+            //     minimize : true,
+            // }));
             r.push(new webpack.optimize.CommonsChunkPlugin({
                 name : "common",
                 filename : "common.js",

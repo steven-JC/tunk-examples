@@ -1,0 +1,12 @@
+{
+  "name": "tunk-loader",
+  "version": "1.0.0",
+  "description": "tunk-loader",
+  "main": "tunk-loader.js",
+  "repository": {
+    "type": "git",
+    "url": "steven-JC/tunk-loader"
+  },
+  "author": "steven-JC",
+  "license": "MIT"
+}

@@ -10,3 +10,6 @@
 [submodule "tunkjs/tunk-react"]
 	path = tunkjs/tunk-react
 	url = https://github.com/tunkjs/tunk-react.git
+[submodule "tunkjs/tunk-loader"]
+	path = tunkjs/tunk-loader
+	url = https://github.com/tunkjs/tunk-loader.git
