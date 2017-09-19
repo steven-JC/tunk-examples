@@ -1,24 +1,24 @@
-import {create, action} from 'tunk';
+import { create, action } from 'tunk';
 
 
-@create('async_await', {isolate:'deep'})
-export default class async_await22 {
+@create('async_await', { isolate: 'deep' })
+class async_await22 {
   //不允许异步，应该保持简单
-  constructor(){
+  constructor() {
     this.state = {
-      count:0
+      count: 0
     };
   }
 
   @action
-  increment(){
+  increment() {
     console.log(this);
-    return {count:this.addOne()};
+    return { count: this.addOne() };
   }
 
   @action
-  decrement(){
-    return {count:this.state.count - 1};
+  decrement() {
+    return { count: this.state.count - 1 };
   }
 
   @action
@@ -30,17 +30,17 @@ export default class async_await22 {
   }
 
   @action
-  async incrementAsync(){
+  async incrementAsync() {
     const count = await new Promise((resolve, reject) => {
       setTimeout(() => {
         this.dispatch('increment');
         resolve(this.state.count);
       }, 1000);
     });
-    return {count};
+    return { count };
   }
 
-  addOne(){
+  addOne() {
     return this.state.count + 1;
   }
 }

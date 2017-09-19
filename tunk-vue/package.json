@@ -63,6 +63,7 @@
     "tunk-action-middleware": "",
     "tunk-cookie": "",
     "tunk-function-middleware": "",
+    "tunk-loader": "^1.0.2",
     "tunk-promise-middleware": "",
     "tunk-request": "",
     "tunk-vue": "",

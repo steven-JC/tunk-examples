@@ -1,8 +1,9 @@
 import {create, action} from 'tunk';
 import _list from './_list';
+import {sleep, until, delay} from 'tunk-delay';
 
 @create
-export default class counter extends _list {
+class counter extends _list {
   //不允许异步，应该保持简单
   constructor(){
     super();
@@ -12,8 +13,9 @@ export default class counter extends _list {
   }
 
   @action
-  decrement(){
-    return {count:this.state.count - 1};
+  async decrement(){
+    const ok = await delay('22', 2000);
+    if(ok) return {count:this.state.count - 1};
   }
 
   @action

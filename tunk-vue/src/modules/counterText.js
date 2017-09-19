@@ -2,7 +2,7 @@ import {create, action, watch} from 'tunk';
 
 
 @create('counterText', {isolate:'deep'})
-export default class counterText {
+class counterText {
   //不允许异步，应该保持简单
   constructor(){
     this.state = {

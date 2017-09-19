@@ -13,7 +13,7 @@ let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-    //devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-eval-source-map',
     entry: {
         main: ['./src/index.js']
     },
@@ -28,6 +28,7 @@ module.exports = {
 			modules: path.join(__dirname, '../modules'),
             tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
             'tunk-vue': path.join(__dirname, '../tunkjs/tunk-vue/tunk-vue.js'),
+            'tunk-delay': path.join(__dirname, '../tunkjs/tunk-delay/tunk-delay.js')
 		}
 	},
     output: {
@@ -44,7 +45,7 @@ module.exports = {
                 loader: 'vue-loader',
             }, {
                 test: /\.js$/,
-                loader: 'babel-loader!tunk-loader',
+                loader: ['babel-loader','tunk-loader'],
                 exclude: /(node_modules)/
             }, {
 				test: /\.json$/,
@@ -52,13 +53,13 @@ module.exports = {
 				loader: 'json',
 			}, {
 				test: /\.(css)$/,
-				loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader' }),
+				loader: ExtractTextPlugin.extract({ fallback: 'style-loader', loader: 'css-loader' }),
 			}, {
                 test: /\.styl$/,
-                loader: 'style!css!stylus?paths=' + path.resolve(__dirname, './node_modules/nib/lib/'),
+                loader: ['style-loader','css-loader','stylus-loader?paths=' + path.resolve(__dirname, './node_modules/nib/lib/')],
             },{
                 test : /\.(less)$/,
-                loader : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader','less-loader'] }),
+                loader : ExtractTextPlugin.extract({ fallback: 'style-loader', loader: ['css-loader','less-loader'] }),
             }, {
 				test: /\.(jpg|png|gif|woff|woff2|eot|ttf|svg)$/,
 				loader: 'url-loader?limit=8192'
@@ -75,7 +76,7 @@ module.exports = {
             options: {
                 vue: {
                     loaders: {
-                        css: ExtractTextPlugin.extract({ fallbackLoader:'vue-style-loader', loader: ['css-loader']}),
+                        css: ExtractTextPlugin.extract({ fallback:'vue-style-loader', loader: ['css-loader']}),
                         js: 'babel-loader',
                         html: 'vue-html-loader',
                     }

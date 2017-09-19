@@ -8,12 +8,14 @@ import routes from './pages/route';
 Vue.use(VueRouter);
 Vue.use(tunkVue(tunk));
 
-var modules = require.context('./modules', true, /\.js$/);
-modules.keys().forEach((item) => {
+var modules = [];
+var modules_ = require.context('./modules', true, /\.js$/);
+modules_.keys().forEach((item) => {
 	console.log(item.replace(/\./, './modules')); 
-	if(item.split('/').pop()[0]!=='_')
-		modules(item);
+	modules.push(modules_(item));
 });
+
+tunk.create(modules, {isolate: 'shallow'});
 
 const routes_ = JSON.parse(JSON.stringify(routes));
 routes_.forEach((it)=>{

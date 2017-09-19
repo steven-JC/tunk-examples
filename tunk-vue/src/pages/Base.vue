@@ -22,6 +22,7 @@ export default {
     page: require('./Index.vue')
   },
 	created(){
+
 		console.log(this,this.state, this.props);
 	},
   methods:{
