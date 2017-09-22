@@ -13,7 +13,7 @@ let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
+    //devtool: 'cheap-module-eval-source-map',
     entry: {
         main: ['./src/index.js']
     },
@@ -28,7 +28,9 @@ module.exports = {
 			modules: path.join(__dirname, '../modules'),
             tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
             'tunk-vue': path.join(__dirname, '../tunkjs/tunk-vue/tunk-vue.js'),
-            'tunk-delay': path.join(__dirname, '../tunkjs/tunk-delay/tunk-delay.js')
+            'tunk-isolation': path.join(__dirname, '../tunkjs/tunk-isolation/tunk-isolation.js'),
+            'tunk-delay': path.join(__dirname, '../tunkjs/tunk-delay/tunk-delay.js'),
+            'tunk-debug': path.join(__dirname, '../tunkjs/tunk-debug/tunk-debug.js')
 		}
 	},
     output: {

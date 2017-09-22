@@ -2,7 +2,7 @@ import {create, action} from 'tunk';
 import _list from './_list';
 import {sleep, until, delay} from 'tunk-delay';
 
-@create
+@create({debug:true})
 class counter extends _list {
   //不允许异步，应该保持简单
   constructor(){
@@ -19,23 +19,22 @@ class counter extends _list {
   }
 
   @action
-   async incrementIfOdd() {
+  async incrementIfOdd() {
     if ((this.state.count + 1) % 2 === 0) {
-      const count = await this.incrementAsync();
+      const {count} = await this.incrementAsync();
       return {count};
     }
   }
 
   @action
   async incrementAsync(){
-    const connt = await new Promise((resolve, reject) => {
+    const count = await new Promise((resolve, reject) => {
       setTimeout(() => {
         this.dispatch('increment');
         resolve(this.state.count);
       }, 1000);
     });
-    return {connt};
-    
+    return {count:count+'-'};
   }
 
 

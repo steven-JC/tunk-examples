@@ -1,4 +1,4 @@
-import {create, action, watch} from 'tunk';
+import {create, action} from 'tunk';
 
 
 @create('counterText', {isolate:'deep'})
@@ -15,12 +15,12 @@ class counterText {
     return {text: this.getText()[n % 4]};
   }
 
-  @watch('counter.count')
+  //@watch('counter.count')
   watchCount(n){
     this.setText(n);
-    setTimeout(()=>{
-      this.dispatch('counter.increment');
-    },2000);
+    // setTimeout(()=>{
+    //   this.dispatch('counter.increment');
+    // },2000);
   }
 
   getText(){
