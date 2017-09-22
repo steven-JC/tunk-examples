@@ -2,7 +2,7 @@ import {create, action} from 'tunk';
 import _list from './_list';
 import {sleep, until, delay} from 'tunk-delay';
 
-@create({debug:true})
+@create
 class counter extends _list {
   //不允许异步，应该保持简单
   constructor(){

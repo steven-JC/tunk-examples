@@ -3,7 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import tunk from "tunk";
 import tunkVue from "tunk-vue";
-import tunkIsolation from "tunk-isolation";
+import tunkIsolate from "tunk-isolate";
 import tunkDebug from "tunk-debug";
 import routes from './pages/route';
 
@@ -12,7 +12,7 @@ tunk.config({
 	debug: location.href.indexOf('debug')>-1
 }).use([
 	tunkVue,
-	tunkIsolation,
+	tunkIsolate,
 	tunkDebug
 ]);
 

@@ -8,7 +8,7 @@ export default class list {
       list:[]
     };
   }
-  @action
+  @action({debug:true})
   increment(){
     return {count:this.addOne()};
   }

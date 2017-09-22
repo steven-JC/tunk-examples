@@ -28,7 +28,7 @@ module.exports = {
 			modules: path.join(__dirname, '../modules'),
             tunk: path.join(__dirname, '../tunkjs/tunk/tunk.js'),
             'tunk-vue': path.join(__dirname, '../tunkjs/tunk-vue/tunk-vue.js'),
-            'tunk-isolation': path.join(__dirname, '../tunkjs/tunk-isolation/tunk-isolation.js'),
+            'tunk-isolate': path.join(__dirname, '../tunkjs/tunk-isolate/tunk-isolate.js'),
             'tunk-delay': path.join(__dirname, '../tunkjs/tunk-delay/tunk-delay.js'),
             'tunk-debug': path.join(__dirname, '../tunkjs/tunk-debug/tunk-debug.js')
 		}
